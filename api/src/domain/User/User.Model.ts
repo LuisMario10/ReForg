@@ -3,13 +3,14 @@ export default class UserModel {
     email: string
     CPF: string
     password: string
-    address?: string
+    passwordConfirm?: string
+    addressId?: string
 
-    constructor(name: string, email: string, CPF: string, password: string, address?: string) {
+    constructor(name: string, email: string, CPF: string, password: string, addressId?: string) {
         this.name = name;
         this.email = email;
-        this.CPF = 
+        this.CPF = CPF
         this.password = password;
-        this.address = address;
+        this.addressId = addressId;
     }
 }

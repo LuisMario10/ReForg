@@ -1,5 +1,5 @@
 import { Router } from 'express'
-import create from '../controllers/User/post';
+import UserController from '../controllers/UserController';
 
 const _USER_ROUTER: Router = Router();
 
@@ -8,7 +8,7 @@ _USER_ROUTER.get("/reforg/app", (_, response) => {
 });
 
 _USER_ROUTER.post("/api/v1/register", (request, response) => {
-    create(request, response);
+    UserController.create(request, response);
 });
 
 export default _USER_ROUTER;
