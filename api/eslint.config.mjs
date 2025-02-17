@@ -9,4 +9,6 @@ export default [
   {languageOptions: { globals: globals.browser }},
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
+  eslint-disable-next-line,
+  typescript-eslint/no-empty-object-type
 ];

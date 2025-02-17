@@ -4,50 +4,46 @@ import { PrismaClientRustPanicError } from "@prisma/client/runtime/library";
 
 export default class UserRepository {
 
-    public static create(datas: UserModel) {
+    public static async create(datas: UserModel) {
+        await new PrismaClient().user.create({
+            data: {
+                name: datas.name,
+                email: datas.email,
+                password: datas.password,
+                
+            }
+        })
+    }
+
+    public static async findAll() {
+        return await new PrismaClient().user.findMany()
+    }
+
+    public static async findById(id: string) {
         try {
-            new PrismaClient().user.create({
-                data: {
-                    name: datas.name,
-                    email: datas.email,
-                    password: datas.password,
-                    code_cpf: datas.CPF
+            return await new PrismaClient().user.findFirst({
+                where: { 
+                    id: id 
                 }
-            })
+            });       
         } catch {
             throw PrismaClientRustPanicError
         }
     }
 
-    public static findAll() {
-        try { return new PrismaClient().user.findMany() }
-        catch { throw PrismaClientRustPanicError }
-    }
-
-    public static findById(id: string) {
+    public static async findByCPF(cpf: string) {
         try {
-            return new PrismaClient().user.findFirst({
-                where: { id: id }
-            })
-        } catch {
-            throw PrismaClientRustPanicError
-        }
-    }
-
-    public static findByCPF(cpf: string) {
-        try {
-            
-            return new PrismaClient().user.findFirst({
+            return await new PrismaClient().user.findFirst({
                 where: { code_cpf: cpf }
-            })
+            });
         } catch {
             throw PrismaClientRustPanicError
         }
     }
 
-    public static findByEmail(email: string) {
+    public static async findByEmail(email: string) {
         try {
-            return new PrismaClient().user.findFirst({
+            return await new PrismaClient().user.findFirst({
                 where: {
                     email: email
                 }
@@ -57,9 +53,9 @@ export default class UserRepository {
         }
     }
 
-    public static update(id: string, updateDatas: UserModel) {
+    public static async update(id: string, updateDatas: UserModel) {
         try {
-            new PrismaClient().user.update({
+            await new PrismaClient().user.update({
                 where: {
                     id: id
                 },
@@ -67,17 +63,16 @@ export default class UserRepository {
                     name: updateDatas.name,
                     email: updateDatas.email,
                     password: updateDatas.password,
-                     
                 }
-            })
+            });
         } catch {
             throw PrismaClientRustPanicError
         }
     }
 
-    public static updateByEmail(email: string, updateDatas: UserModel) {
+    public static async updateByEmail(email: string, updateDatas: UserModel) {
         try {
-            new PrismaClient().user.update({
+            await new PrismaClient().user.update({
                 where: {
                     email: email
                 },
@@ -93,9 +88,9 @@ export default class UserRepository {
         }
     }
 
-    public static delete(id: string) {
+    public static async delete(id: string) {
         try {
-            new PrismaClient().user.delete({
+            await new PrismaClient().user.delete({
                 where: {
                     id: id
                 }
@@ -118,3 +113,4 @@ export default class UserRepository {
     }
 
 }
+
