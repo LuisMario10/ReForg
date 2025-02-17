@@ -7,7 +7,7 @@ export default class UserController {
 
     public static async post(request: Request<{}, {}, UserModel>, response: Response) {
         try {
-            const { name, email, password, passwordConfirm } = request.body
+            const { name, email, CPF, password, passwordConfirm } = request.body
 
             if(name == undefined || name.length <= 0 || name === "") 
                 response.status(422).json({ 
@@ -47,14 +47,14 @@ export default class UserController {
 
             const passwordHashed: string = await Hash.generateHash(password);
 
-            UserRepository.create(new UserModel(name, email, passwordHashed));
+            UserRepository.create(new UserModel(name, email, passwordHashed, CPF));
 
             response.status(201).json({
-                    statusCode: 201, 
-                    message: "Password and confirmation password fields must be the same" 
-                });
+                statusCode: 201, 
+                message: "Password and confirmation password fields must be the same" 
+            });
         } catch {
-            response.status(500).json({ 
+            response.status(500).json({
                 statusCode: 500, 
                 message: "Server internal error" 
             });
@@ -65,7 +65,7 @@ export default class UserController {
         try {
             const datas = await UserRepository.findAll();
             console.log(datas);
-            return response.status(200).json({ 
+            response.status(200).json({ 
                 statusCode: 200, 
                 message: "All data from all users was accessed", 
                 result: datas
@@ -138,6 +138,17 @@ export default class UserController {
             
             const { name, email, password, passwordConfirm } = request.body;
 
+            if(!email || email.length <= 0 || email === "") 
+                response.status(422).json({ statusCode: 422, message: "Email field cannot be null" })
+
+            if(!password || password.length <= 0 || password === "")
+                response.status(422).json({ statusCode: 422, message: "Email field cannot be null"})
+
+            const user = await UserRepository.findByEmail(String(email))
+
+            if(!user) 
+                response.status(404).json({ statusCode: 404, message: "User not found" })
+
             const data = await UserRepository.findByEmail(String(email));
             const userDataUpdate = new UserModel(name, String(data?.email), String(data?.code_cpf), String(data?.password));
 
@@ -164,6 +175,10 @@ export default class UserController {
             if(!password) response.status(402).json({ statusCode: 402, message: "Password field cannot be empty!!!" })
 
             const user = await UserRepository.findByEmail(String(email));
+
+            if(!user)
+                response.status(404).json({ statusCode: 404, message: "User not found" })
+
             UserRepository.delete(String(user?.id));
         } catch {
             response.status(500).json({ statusCode: 500, message:  "Server internal Error"});
