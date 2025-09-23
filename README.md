@@ -1,45 +1,80 @@
-# Reforg
+# 🎮 ReForg - Marketplace de Games
 
-## Um MarketPlace para Video Games
-
-## Sobre o Projeto
-
-- A Reforg surge com o proposito de facilitar a procura por um console, jogo ou item de jogatina seja ele atual ou retro
-- A Reforg procupa com as etapas para adiquirir um novo game
-- Aqui os proprios clietes podem anunciar e vender seus jogos
-
-## Tipo de projeto
-
-- Site (inicialmente)
-
-## Criador da Reforg
-
-- Luis Mario
-
-## Inicio do desenolvimento
-
-- 12/12/2024
-
-## Data de Lançamento do Projeto
-
-- Indefinida
-
-## Ideia chave do projeto
-
-- Ser um marketlace focado na compra e venda de games
-
-## Como acessar o projeto
-
-- Ainda não está no ar, em breve mais atualizações
+ReForg é um marketplace online focado na **compra e venda de itens de videogames**, oferecendo uma plataforma segura, confiável e com entrega rápida. Ideal para jogadores que desejam negociar skins, moedas, armas e outros ativos digitais de forma prática.
 
 ---
 
-### Tecnologias usadas no site
-- React Js
-- Typescript
-- Prisma
-- JsonWebToken
-- ExpressJS
-- Tailwind
-- MySQL
-- Git
+## 📌 Sumário
+
+- [📖 Sobre o Projeto](#-sobre-o-projeto)
+- [🗓️ Data de Início](#️-data-de-início)
+- [⚙️ Tecnologias Utilizadas](#-tecnologias-utilizadas)
+- [📦 Funcionalidades (Planejadas)](#-funcionalidades-planejadas)
+- [🚀 Como Rodar o Projeto (em breve)](#-como-rodar-o-projeto)
+- [📄 Licença](#-licença)
+
+---
+
+## 📖 Sobre o Projeto
+
+> O objetivo do ReForg é facilitar a **compra e venda de itens de videogame** com foco em **confiabilidade**, **segurança** e **entrega rápida**, promovendo um ambiente de negociações transparente entre jogadores.
+
+---
+
+## 🗓️ Data de Início
+
+- **23/09/2025**
+
+---
+
+## ⚙️ Tecnologias Utilizadas
+
+### 🧠 Back-End
+
+- **TypeScript** – Tipagem estática e segura para o projeto.
+- **Node.js** – Plataforma de execução do back-end.
+- **Express** – Framework leve para APIs REST.
+- **PostgreSQL** – Banco de dados relacional robusto.
+- **Prisma ORM** – ORM moderno e tipado para Node.js.
+- **Docker** – Contêineres para facilitar o ambiente de desenvolvimento.
+- **JWT** - Tokens de Autenticação
+
+### 🎨 Front-End
+
+- **React** – Biblioteca para construção de interfaces reativas.
+- **TypeScript** – Segurança e produtividade no front-end.
+- **Tailwind CSS** – Estilização rápida com classes utilitárias.
+- **Zod** – Validação de dados com schemas tipados.
+
+---
+
+## 📦 Funcionalidades (Planejadas)
+
+- [ ] Cadastro e login de usuários (com autenticação segura)
+- [ ] Listagem de produtos (itens de jogos)
+- [ ] Sistema de busca e filtros
+- [ ] Carrinho de compras
+- [ ] Checkout e sistema de pagamento (mock ou real)
+- [ ] Painel de vendedor e comprador
+- [ ] Histórico de compras e vendas
+- [ ] Avaliação de vendedores
+- [ ] Notificações por email
+- [ ] API documentada com Swagger
+- [ ] Testes automatizados (unitários e integração)
+
+---
+
+## 🚀 Como Rodar o Projeto
+
+> ⚠️ **Ainda em desenvolvimento** — instruções detalhadas serão adicionadas em breve.
+
+**Pré-requisitos previstos:**
+- Docker e Docker Compose
+- Node.js LTS
+- Yarn ou npm
+
+---
+
+## 📄 Licença
+
+Este projeto está sob a licença **MIT**. Consulte o arquivo [LICENSE](./LICENSE) para mais informações.
