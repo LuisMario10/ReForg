@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "ES6",                          // Versão de JS que será gerada
+    "module": "commonjs",                     // Tipo de módulo (use "ESNext" se for front-end moderno)
+    "outDir": "./dist",                       // Pasta onde os arquivos JS serão gerados
+    "rootDir": "./src",                       // Pasta onde estão os arquivos TS
+    "strict": true,                           // Ativa todas as verificações estritas
+    "esModuleInterop": true,                  // Importação compatível com módulos CommonJS
+    "forceConsistentCasingInFileNames": true  // Força nomes de arquivos consistentes
+  },
+  "include": ["src"],                         // Quais arquivos/pastas incluir
+  "exclude": ["node_modules"]                 // Quais arquivos/pastas excluir
+}
