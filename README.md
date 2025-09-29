@@ -38,13 +38,7 @@ ReForg é um marketplace online focado na **compra e venda de itens de videogame
 - **Prisma ORM** – ORM moderno e tipado para Node.js.
 - **Docker** – Contêineres para facilitar o ambiente de desenvolvimento.
 - **JWT** - Tokens de Autenticação
-
-### 🎨 Front-End
-
-- **React** – Biblioteca para construção de interfaces reativas.
-- **TypeScript** – Segurança e produtividade no front-end.
-- **Tailwind CSS** – Estilização rápida com classes utilitárias.
-- **Zod** – Validação de dados com schemas tipados.
+- **YUP** - Validação de Dados
 
 ---
 
