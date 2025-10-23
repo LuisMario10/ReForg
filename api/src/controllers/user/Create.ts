@@ -2,6 +2,7 @@ import { Request, Response } from "express";
 import { StatusCodes } from "http-status-codes"
 import { TBodyProps } from "../@types";
 import { z } from 'zod'
+import bcrypt from "bcrypt"
 
 const bodyValidator = z.object({
     name: z.string().min(2, { message: "Nome curto demais" }),
@@ -15,7 +16,15 @@ export const create = async (request: Request<{}, {}, TBodyProps>, response: Res
     try {
         const { name, email, password, cpf } = bodyValidator.parse(request.body);
 
-        return response.status(StatusCodes.CREATED).json({ statusCodes: StatusCodes.CREATED, msg: "Usuario criado com sucesso", data: { id: 1 } });
+        const hashedPassword = await bcrypt.hash(password, 10);
+
+        const hashedCPF = await bcrypt.hash(cpf, 10);
+
+        return response.status(StatusCodes.CREATED).json({ 
+            statusCodes: StatusCodes.CREATED, 
+            message: "Usuario criado com sucesso", 
+            data: { id: 1 } 
+        });
 
     } catch(error) {
         return response.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ error });

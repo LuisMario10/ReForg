@@ -62,7 +62,7 @@ ReForg é um marketplace online focado na **compra e venda de itens de videogame
 
 > ⚠️ **Ainda em desenvolvimento** — instruções detalhadas serão adicionadas em breve.
 
-**Pré-requisitos previstos:**
+**Pré-requisitos:**
 - Docker e Docker Compose
 - Node.js LTS
 - Yarn ou npm
