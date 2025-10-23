@@ -1,1 +1,1 @@
-export * from './products/index'
+export * from './user'

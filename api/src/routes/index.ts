@@ -8,5 +8,3 @@ router.get("/", (_, response) => {
     response.send("ReForg API");
 });
 
-router.post("/reforg/products", (request, response) => ProductsController.create(request, response));
-
