@@ -1,6 +1,6 @@
 # 🎮 ReForg - Marketplace de Games
 
-ReForg é um marketplace online focado na **compra e venda de itens de videogames**, oferecendo uma plataforma segura, confiável e com entrega rápida. Ideal para jogadores que desejam negociar skins, moedas, armas e outros ativos digitais de forma prática.
+- ReForg é um marketplace online focado na **compra e venda de itens de videogames**, oferecendo uma plataforma segura, confiável e com entrega rápida. Ideal para jogadores que desejam negociar skins, moedas, armas e outros ativos digitais de forma prática.
 
 ---
 
@@ -66,18 +66,4 @@ ReForg é um marketplace online focado na **compra e venda de itens de videogame
 - [ ] Testes automatizados (unitários e integração)
 
 ---
-
-## 🚀 Como Rodar o Projeto
-
-> ⚠️ **Ainda em desenvolvimento** — instruções detalhadas serão adicionadas em breve.
-
-**Pré-requisitos:**
-- Docker e Docker Compose
-- Node.js LTS
-- Yarn ou npm
-
----
-
-## 📄 Licença
-
 Este projeto está sob a licença **MIT**. Consulte o arquivo [LICENSE](./LICENSE) para mais informações.
