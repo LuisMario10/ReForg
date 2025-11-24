@@ -29,17 +29,26 @@ ReForg é um marketplace online focado na **compra e venda de itens de videogame
 
 ## ⚙️ Tecnologias Utilizadas
 
+### Front-End
+
+- **TypeScript** – Tipagem estática e segura para o projeto.
+- **NextJS** – Framework web desenvolvido em ReactJs.
+- **TailwindCSS** – Framework para estilização.
+
 ### 🧠 Back-End
 
 - **TypeScript** – Tipagem estática e segura para o projeto.
 - **Node.js** – Plataforma de execução do back-end.
-- **Express** – Framework leve para APIs REST.
+- **Express** – Um Micro Framework leve para APIs REST.
+- **NestJS** – Um Framework robusto para APIs REST e fortemente opinado.
 - **PostgreSQL** – Banco de dados relacional robusto.
 - **Prisma ORM** – ORM moderno e tipado para Node.js.
 - **Docker** – Contêineres para facilitar o ambiente de desenvolvimento.
+- **Jest** – Testes Unitarios que vão garantir o funcionamento do projeto.
+- **Cypress** – Ferramenta para testes de integração e End2End
 - **JWT** - Tokens de Autenticação
-- **YUP** - Validação de Dados
-
+- **ZOD** - Validação de Dados
+- **AWS** - Plataforma Cloud
 ---
 
 ## 📦 Funcionalidades (Planejadas)
